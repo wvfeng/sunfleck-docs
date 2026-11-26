@@ -1,0 +1,17 @@
+{
+  "nodeVersion": "22.17.1",
+  "installCommand": "true",
+  "buildCommand": "npm run build",
+  "outputDirectory": "out/makers/site/web",
+  "headers": [
+    {
+      "source": "/sunfleck.wasm",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/wasm"
+        }
+      ]
+    }
+  ]
+}

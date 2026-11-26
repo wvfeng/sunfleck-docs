@@ -6,14 +6,26 @@
 
 准备已激活且与 Wasm SDK 匹配的 Emscripten、Ninja、CMake 3.25+、Python 3.9+，以及同版本桌面 SDK 的 `fleckc`。字体放置方法见 [字体说明](assets/fonts/README.md)。
 
-在本项目目录运行以下命令，替换三个工具路径。
+在 `docs/site` 目录运行以下命令。SDK 和工具链从工作区的 `sdk/local` 读取。
 
 ```powershell
-./build.ps1 -SdkRoot C:/SDK/Sunfleck-Wasm -FleckCompiler C:/SDK/Sunfleck/bin/fleckc.exe -EmsdkRoot C:/tools/emsdk
-python -m http.server 8790 --bind 127.0.0.1 --directory out/web
+$sdk = (Resolve-Path '../../sdk/local').Path
+$python = "$sdk/emsdk/python/3.9.2-nuget_64bit/python.exe"
+$env:EM_CONFIG = (Resolve-Path "$sdk/emsdk/.emscripten").Path
+$env:EM_CACHE = (Resolve-Path "$sdk/emscripten-cache").Path
+$env:PATH = "$sdk/bin;$(Split-Path $python);$env:PATH"
+
+./build.ps1 -SdkRoot "$sdk/web-wasm32" -FleckCompiler "$sdk/windows-x64/bin/fleckc.exe" -EmsdkRoot "$sdk/emsdk" -Python $python
+& $python -m http.server 8790 --bind 127.0.0.1 --directory out/web
 ```
 
 打开 [本地预览](http://127.0.0.1:8790/#/Button)。输出目录 `out/web` 可静态部署，ZIP 为 `out/sunfleck-docs.zip`。站点支持 `#/Button` 和 `#/quick` 等深链接。
+
+## EdgeOne Makers 部署
+
+关联 `sunfleck-docs` 仓库后，将 Makers 的根目录设为 `site`，框架预设选「其他」或「自定义」。[edgeone.json](edgeone.json) 指定安装命令 `true`、编译命令 `npm run build` 和输出目录 `out/makers/site/web`。如果控制台要求填写这些字段，使用相同的值。
+
+构建命令在 Linux x86_64 上运行，需要 Bash、Git、curl、tar 和 Python 3.9+。它从 [Core v1.0.0 Release](https://github.com/wvfeng/sunfleck-core/releases/tag/v1.0.0) 下载 Linux `fleckc` 和配套 Wasm SDK，并安装指定版本的 CMake、Ninja、Emscripten 和字体。若发布的 `fleckc` 受构建机系统库限制无法启动，脚本会尝试用支持 C++20 的宿主编译器从同一标签重建 `fleckc`。生成的站点包含 HTML、JavaScript、Wasm、字体数据和许可证。
 
 ## 内容维护
 

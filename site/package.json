@@ -1,0 +1,7 @@
+{
+  "name": "sunfleck-docs",
+  "private": true,
+  "scripts": {
+    "build": "bash tools/build-makers.sh"
+  }
+}
