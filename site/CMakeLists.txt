@@ -10,8 +10,26 @@ if(NOT Sunfleck_WEB_ASSETS)
   message(FATAL_ERROR "Set Sunfleck_DIR to the installed Wasm SDK CMake package.")
 endif()
 set(SUNFLECK_FLECKC "" CACHE FILEPATH "fleckc from the matching host SDK")
-if(NOT EXISTS "${SUNFLECK_FLECKC}")
+set(SUNFLECK_FLECKC_SOURCE_DIR "" CACHE PATH "Matching Core source for building fleckc for Node.js")
+if(SUNFLECK_FLECKC_SOURCE_DIR)
+  find_program(SUNFLECK_NODE_EXECUTABLE node REQUIRED)
+  add_executable(fleckc_node "${SUNFLECK_FLECKC_SOURCE_DIR}/tools/fleckc.cpp")
+  target_include_directories(fleckc_node PRIVATE "${SUNFLECK_FLECKC_SOURCE_DIR}/src")
+  target_link_libraries(fleckc_node PRIVATE Sunfleck::sunfleck)
+  set_target_properties(fleckc_node PROPERTIES SUFFIX ".js")
+  set(fleckc_node_fs "${CMAKE_CURRENT_SOURCE_DIR}/tools/fleckc-node-fs.js")
+  target_link_options(fleckc_node PRIVATE -sENVIRONMENT=node -lnodefs.js -sFORCE_FILESYSTEM
+    -sSINGLE_FILE=1 -sWASM_ASYNC_COMPILATION=0 -sALLOW_MEMORY_GROWTH=1 -sSTACK_SIZE=524288
+    "--pre-js=${fleckc_node_fs}")
+  set_property(TARGET fleckc_node APPEND PROPERTY LINK_DEPENDS "${fleckc_node_fs}")
+  set(fleckc "$<TARGET_FILE:fleckc_node>")
+  set(fleckc_runner "${SUNFLECK_NODE_EXECUTABLE}")
+  set(fleckc_dependencies fleckc_node)
+elseif(NOT EXISTS "${SUNFLECK_FLECKC}")
   message(FATAL_ERROR "Set SUNFLECK_FLECKC to the host SDK's fleckc executable.")
+else()
+  set(fleckc "${SUNFLECK_FLECKC}")
+  set(fleckc_dependencies "${fleckc}")
 endif()
 set(SUNFLECK_DOC_FONT "${CMAKE_CURRENT_SOURCE_DIR}/assets/fonts/NotoSansCJKsc-Regular.otf" CACHE FILEPATH "Licensed CJK documentation font")
 set(SUNFLECK_DOC_MONO "${CMAKE_CURRENT_SOURCE_DIR}/assets/fonts/NotoSansMono.ttf" CACHE FILEPATH "Licensed monospaced documentation font")
@@ -25,8 +43,8 @@ file(GLOB_RECURSE pages CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/content/*
   "${CMAKE_CURRENT_SOURCE_DIR}/components/*.fleck")
 set(generated_pages "${CMAKE_CURRENT_BINARY_DIR}/pages.inc")
 add_custom_command(OUTPUT "${generated_pages}"
-  COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/pages.py" "${SUNFLECK_FLECKC}" "${generated_pages}"
-  DEPENDS ${pages} shell.fleck sdk-links.json tools/pages.py tools/api_zh.py "${SUNFLECK_FLECKC}" VERBATIM)
+  COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/pages.py" "${fleckc}" "${generated_pages}" ${fleckc_runner}
+  DEPENDS ${pages} shell.fleck sdk-links.json tools/pages.py tools/api_zh.py ${fleckc_dependencies} VERBATIM)
 add_custom_target(check_pages DEPENDS "${generated_pages}")
 
 add_executable(documentation main.cpp "${generated_pages}")

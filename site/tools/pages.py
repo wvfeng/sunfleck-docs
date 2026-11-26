@@ -238,14 +238,22 @@ def cpp_rows(name, rows):
             *("    {{" + ", ".join(map(cpp_text, row)) + "}}," for row in rows), "};"]
 
 
-def build(fleckc, output):
+def build(fleckc, output, node=None):
+    output = output.resolve()
     with tempfile.TemporaryDirectory(dir=output.parent) as scratch:
         folder = Path(scratch)
         schema_file = folder / "schema.json"
-        subprocess.run([fleckc, "--schema", schema_file], check=True)
+        command = [fleckc]
+        button_template = ROOT / "components/NavigationButton.fleck"
+        if node:
+            command.insert(0, node)
+            # The Node build mounts the temporary directory as its working directory.
+            local_template = folder / button_template.name
+            local_template.write_bytes(button_template.read_bytes())
+            button_template = local_template
+        subprocess.run([*command, "--schema", schema_file.name], cwd=folder, check=True)
         pages, links, visual, layout = catalog(json.loads(schema_file.read_text(encoding="utf-8")))
         shell = (ROOT / "shell.fleck").read_text(encoding="utf-8")
-        button_template = ROOT / "components/NavigationButton.fleck"
         generated = [f"constexpr auto shell = {cpp_text(shell)};",
                      f"constexpr std::string_view navigation_button = {cpp_text(button_template.read_text(encoding='utf-8'))};",
                      *cpp_rows("visual_properties", visual), *cpp_rows("layout_properties", layout)]
@@ -258,8 +266,9 @@ def build(fleckc, output):
             source = markup(body)
             page_file = folder / f"{route}.fleck"
             page_file.write_text(shell.replace("<!--content-->", source), encoding="utf-8")
-            subprocess.run([fleckc, "--format", "binary", "--resource", button_template,
-                            page_file, folder / "page.flkb"], check=True)
+            resource = button_template.name if node else button_template
+            subprocess.run([*command, "--format", "binary", "--resource", resource,
+                            page_file.name, "page.flkb"], cwd=folder, check=True)
             ids = [node.attrib["Id"] for node in body.iter() if "Id" in node.attrib]
             if len(ids) != len(set(ids)) or any(not re.fullmatch(r"[\w.-]+", value) for value in ids):
                 raise ValueError(f"{route}: invalid or duplicate Id")
@@ -275,4 +284,4 @@ def build(fleckc, output):
 
 
 if __name__ == "__main__":
-    build(sys.argv[1], Path(sys.argv[2]))
+    build(str(Path(sys.argv[1]).resolve()), Path(sys.argv[2]), *sys.argv[3:])
