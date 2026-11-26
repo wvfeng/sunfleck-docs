@@ -1,0 +1,23 @@
+<Window xmlns="urn:sunfleck:v1" Title="Sunfleck inline text" Width="720" Height="440">
+  <Border Background="#f5f7fc" BorderBrush="#c8d3e3" BorderThickness="1" CornerRadius="16" Padding="24">
+    <StackPanel Spacing="18" FontFamily="Segoe UI" FontSize="18">
+      <TextBlock>
+        <Run Text="One paragraph, " FontSize="30" FontWeight="Bold"/>
+        <Run Text="many voices" FontSize="30" FontStyle="Italic" Foreground="#ff476ec8"/>
+      </TextBlock>
+      <TextBlock Width="440" HorizontalAlignment="Left">
+        <Run Text="A paragraph can mix "/>
+        <Span FontWeight="Bold" Foreground="#ffb43b58">
+          <Run Text="bold color "/>
+          <Run Text="and a larger accent" FontSize="28"/>
+        </Span>
+        <Run Text=" while sharing line breaks and baseline metrics. "/>
+        <Run Text="Underlined text." TextDecorations="Underline"/>
+      </TextBlock>
+      <TextBlock FlowDirection="RightToLeft" TextAlignment="Right">
+        <Run Text="שלום " Foreground="#ff286b50" FontSize="24"/>
+        <Run Text="· مرحبا · Sunfleck"/>
+      </TextBlock>
+    </StackPanel>
+  </Border>
+</Window>

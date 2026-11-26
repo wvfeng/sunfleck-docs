@@ -1,0 +1,28 @@
+<Window xmlns="urn:sunfleck:v1" Title="布局组件" Width="720" Height="460">
+  <Grid ColumnDefinitions="*,*" Padding="12" Spacing="16">
+    <StackPanel Spacing="12">
+      <Label Text="StackPanel / Panel / Card"/>
+      <Panel><TextBlock Text="Panel 背景"/></Panel>
+      <Card><TextBlock Text="Card 边框与背景"/></Card>
+      <Label Text="Grid: 固定 90 + 剩余空间"/>
+      <Grid ColumnDefinitions="90,*" Spacing="8">
+        <Badge Text="90" Width="90" Weight="0"/>
+        <Button Grid.Column="1" Content="Weight=1"/>
+      </Grid>
+      <Label Text="Flex: 首选宽度 + 权重增长"/>
+      <Flex Spacing="8"><Button Content="A"/><Button Content="B"/></Flex>
+    </StackPanel>
+    <StackPanel Grid.Column="1" Spacing="8">
+      <Label Text="WrapPanel: 自动换行"/>
+      <WrapPanel Spacing="8">
+        <Button Content="第一项" Width="160"/>
+        <Button Content="第二项" Width="160"/>
+        <Button Content="第三项" Width="160"/>
+      </WrapPanel>
+      <Label Text="SplitView: 拖动分隔条"/>
+      <SplitView Value="40"><TextBlock Text="左侧"/><TextBlock Text="右侧"/></SplitView>
+      <Label Text="Overlay: 共用同一区域"/>
+      <Overlay><ProgressBar Value="65"/><TextBlock Text="65%"/></Overlay>
+    </StackPanel>
+  </Grid>
+</Window>

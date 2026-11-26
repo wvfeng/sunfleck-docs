@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="超链接">
+  <StackPanel>
+    <TextBlock Id="summary" Text="以文字样式触发导航或其他链接操作。"/>
+    <StackPanel Id="demo">
+      <Hyperlink Id="open-quick" Text="查看快速开始"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="通过 Command 或宿主动作处理目标。链接文字应描述目的地。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="显示的链接名称。"/>
+      <TextBlock Id="Command" Text="导航或宿主操作。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

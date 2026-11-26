@@ -1,0 +1,34 @@
+<Window xmlns="urn:sunfleck:v1" Title="列表与导航" Width="720" Height="660">
+  <Grid ColumnDefinitions="*,*" Padding="12" Spacing="16">
+    <StackPanel Spacing="8">
+      <Label Text="ComboBox：Value 是从 0 开始的索引"/>
+      <ComboBox Value="1"><ListItem Text="中文"/><ListItem Text="English"/></ComboBox>
+      <Label Text="ListView / ListItem"/>
+      <ListView Value="0"><ListItem Text="开始使用"/><ListItem Text="组件参考"/></ListView>
+      <Label Text="TreeView / TreeItem"/>
+      <TreeView>
+        <TreeItem Text="项目" Value="1"><TreeItem Text="页面.fleck"/><TreeItem Text="模型.cpp"/></TreeItem>
+        <TreeItem Text="资源"><TreeItem Text="图片.png"/></TreeItem>
+      </TreeView>
+      <Label Text="ItemsControl：普通子节点"/>
+      <ItemsControl><Badge Text="项目一"/><TextBlock Text="项目二"/></ItemsControl>
+    </StackPanel>
+    <StackPanel Grid.Column="1" Spacing="8">
+      <Label Text="TabView / TabItem"/>
+      <TabView Value="0">
+        <TabItem Text="概览"><TextBlock Text="当前是概览页"/></TabItem>
+        <TabItem Text="详情"><TextBlock Text="切换到了详情页"/></TabItem>
+      </TabView>
+      <Label Text="NavigationView / TabItem"/>
+      <NavigationView Value="0">
+        <TabItem Text="主页"><TextBlock Text="主页内容"/></TabItem>
+        <TabItem Text="设置"><TextBlock Text="设置内容"/></TabItem>
+      </NavigationView>
+      <Label Text="DataGrid：每行是一个 Grid"/>
+      <DataGrid>
+        <Grid ColumnDefinitions="80,*"><Badge Text="语言" Width="80" Weight="0"/><TextBox Grid.Column="1" Text="C++"/></Grid>
+        <Grid ColumnDefinitions="80,*"><Badge Text="界面" Width="80" Weight="0"/><TextBox Grid.Column="1" Text="Fleck"/></Grid>
+      </DataGrid>
+    </StackPanel>
+  </Grid>
+</Window>

@@ -1,0 +1,23 @@
+<Window xmlns="urn:sunfleck:v1" Title="Transform and drawing" Width="540" Height="280">
+  <Canvas>
+    <Border Canvas.Left="24" Canvas.Top="24" Width="230" Height="92" CornerRadius="12">
+      <Border.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+          <GradientStop Offset="0" Color="#205C88"/>
+          <GradientStop Offset="1" Color="#6D42AC"/>
+        </LinearGradientBrush>
+      </Border.Background>
+      <Border.Effect><DropShadowEffect Radius="5" Offset="3,4" Color="#90000000"/></Border.Effect>
+      <TextBlock Text="Sunfleck" Foreground="#FFFFFF" FontSize="25" Margin="14"/>
+    </Border>
+    <Ellipse Canvas.Left="294" Canvas.Top="30" Width="88" Height="88" Stroke="#233650" StrokeThickness="2">
+      <Ellipse.Fill><RadialGradientBrush Center="0.4,0.4" RadiusX="0.6" RadiusY="0.6">
+        <GradientStop Offset="0" Color="#FFFEDC"/><GradientStop Offset="1" Color="#CF882B"/>
+      </RadialGradientBrush></Ellipse.Fill>
+    </Ellipse>
+    <Path Canvas.Left="408" Canvas.Top="38" Width="70" Height="66" Data="M 2,57 Q 28,1 60,40 L 60,57 Z" Fill="#288F80"/>
+    <TextBox Canvas.Left="50" Canvas.Top="162" Width="220" Height="40" Text="Editable text" RenderTransformOrigin="0.5,0.5">
+      <TextBox.RenderTransform><TransformGroup><ScaleTransform ScaleX="1.05"/><RotateTransform Angle="-8"/></TransformGroup></TextBox.RenderTransform>
+    </TextBox>
+  </Canvas>
+</Window>

@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="停靠文档">
+  <StackPanel>
+    <TextBlock Id="summary" Text="承载工作区主要内容，并可随布局停靠。"/>
+    <StackPanel Id="demo">
+      <DockHost Height="190"><DockGroup><DockDocument Id="dock-editor" Title="编辑器" CanClose="false"><TextArea Text="这里可以编辑文字。"/></DockDocument></DockGroup></DockHost>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="适合编辑器和主视图。设置稳定 Id 后应用可恢复对应布局。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Title" Text="文档标签文字。"/>
+      <TextBlock Id="CanClose" Text="是否允许关闭。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

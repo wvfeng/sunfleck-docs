@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="多行输入">
+  <StackPanel>
+    <TextBlock Id="summary" Text="编辑可换行的长文本。"/>
+    <StackPanel Id="demo">
+      <TextArea Height="100" Text="第一行&#10;可以继续输入第二行。"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="为多行编辑区设置可用高度，长内容可在内部滚动。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="支持换行的编辑内容。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

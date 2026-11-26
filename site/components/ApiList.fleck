@@ -1,0 +1,20 @@
+<StackPanel xmlns="urn:sunfleck:v1" Id="PANEL" Spacing="4">
+  <Grid ColumnDefinitions="2.2*,1.2*,1.4*,3.4*" Spacing="6" Padding="6">
+    <TextBlock Text="属性" FontWeight="SemiBold" MinHeight="24"/>
+    <TextBlock Grid.Column="1" Text="类型" FontWeight="SemiBold" MinHeight="24"/>
+    <TextBlock Grid.Column="2" Text="默认值" FontWeight="SemiBold" MinHeight="24"/>
+    <TextBlock Grid.Column="3" Text="说明" FontWeight="SemiBold" MinHeight="24"/>
+  </Grid>
+  <ListView Id="LIST" ItemsSource="ROWS" Height="HEIGHT" Spacing="0" Padding="0" FontSize="13" LineHeight="17">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <Grid ColumnDefinitions="2.2*,1.2*,1.4*,3.4*" Spacing="6" Margin="6,3,6,3">
+          <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+          <TextBlock Grid.Column="1" Text="{Binding Type}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+          <TextBlock Grid.Column="2" Text="{Binding Default}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+          <TextBlock Grid.Column="3" Text="{Binding Description}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+        </Grid>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</StackPanel>

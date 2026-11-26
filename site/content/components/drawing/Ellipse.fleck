@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="椭圆">
+  <StackPanel>
+    <TextBlock Id="summary" Text="在指定布局范围中绘制椭圆或圆形。"/>
+    <StackPanel Id="demo">
+      <Ellipse Width="120" Height="72" Fill="#ADE0EA" Stroke="#16768D" StrokeThickness="2"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="宽高相等时形成圆形，宽高不同时按布局尺寸拉伸。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Fill" Text="内部画刷。"/>
+      <TextBlock Id="Stroke" Text="轮廓画刷。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

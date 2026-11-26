@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="上下文菜单">
+  <StackPanel>
+    <TextBlock Id="summary" Text="围绕目标节点提供右键操作。"/>
+    <StackPanel Id="demo">
+      <StackPanel Spacing="8"><Button Id="context-anchor" Text="右键打开菜单" Width="150"/><ContextMenu Anchor="context-anchor"><Button Text="查看项目"/></ContextMenu></StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="用 Anchor 指向目标节点，也可通过 Value 主动控制显示。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Anchor" Text="右键触发的目标 Id。"/>
+      <TextBlock Id="Value" Text="菜单打开状态。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

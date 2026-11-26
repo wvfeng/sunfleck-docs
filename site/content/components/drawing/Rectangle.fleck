@@ -1,0 +1,16 @@
+<Window xmlns="urn:sunfleck:v1" Title="矩形">
+  <StackPanel>
+    <TextBlock Id="summary" Text="绘制可填充和描边的矩形。"/>
+    <StackPanel Id="demo">
+      <Rectangle Width="128" Height="64" Fill="#9BDCE9" Stroke="#146C86" StrokeThickness="2"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="通过布局属性设置几何范围，用 Fill 和 Stroke 区分内部与边缘。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Fill" Text="填充颜色或画刷。"/>
+      <TextBlock Id="Stroke" Text="描边颜色或画刷。"/>
+      <TextBlock Id="StrokeThickness" Text="逻辑像素线宽。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

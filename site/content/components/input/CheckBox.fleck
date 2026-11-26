@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="复选框">
+  <StackPanel>
+    <TextBlock Id="summary" Text="表示可独立切换的是非选项。"/>
+    <StackPanel Id="demo">
+      <CheckBox Text="保存本地设置" Value="1"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="并列的复选框可各自选择。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="0 未选中，1 选中。"/>
+      <TextBlock Id="Text" Text="选项说明。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

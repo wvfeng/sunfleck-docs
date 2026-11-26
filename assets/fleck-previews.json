@@ -1,0 +1,97 @@
+{
+  "renderer": "Sunfleck Windows headless software / Radix light",
+  "librarySha256": "3971a0d235063a309156db5ad8532e56660f7a49dd634fcca19c7608d4d6fd57",
+  "schemaComponents": 55,
+  "examples": [
+    {
+      "source": "docs/snippets/fleck/border.fleck",
+      "sourceSha256": "11838867f9710832589cab04912032acba8f9a93d43d2a77c27284ad80fef4b5",
+      "image": "docs/assets/fleck-border-preview.png",
+      "imageSha256": "d6b27427dca4094ebcbb6304d4e241f20a77f25df6428baea69256bc42179049",
+      "nativeWidth": 520,
+      "nativeHeight": 420,
+      "width": 480,
+      "height": 388
+    },
+    {
+      "source": "docs/snippets/fleck/collections.fleck",
+      "sourceSha256": "15a7ee1a8e47bd65a815f7841c737a8a8386f1919001f5cf6c4f76f285226996",
+      "image": "docs/assets/fleck-collections-preview.png",
+      "imageSha256": "85f0637a46f1906a24dde9116da9ce3302b3bd63b6f1b1a727b7e6245cea3324",
+      "nativeWidth": 720,
+      "nativeHeight": 660,
+      "width": 480,
+      "height": 440
+    },
+    {
+      "source": "docs/snippets/fleck/components.fleck",
+      "sourceSha256": "011847bf7431b3ebab55226da15997bacc2d9f2ed31ea73a7eed4dd67e0656c6",
+      "image": "docs/assets/fleck-components-preview.png",
+      "imageSha256": "3096f9b8f978ca27ec7e43e786bcc486a9b28ac086b85ca575729bb1a3d200e7",
+      "nativeWidth": 760,
+      "nativeHeight": 520,
+      "width": 480,
+      "height": 328
+    },
+    {
+      "source": "docs/snippets/fleck/docking.fleck",
+      "sourceSha256": "56e00901252aeec6c8f4d75a4c9c6730d52bfaee74a20cd4c3fdb17b4dc484a1",
+      "image": "docs/assets/fleck-docking-preview.png",
+      "imageSha256": "6001644593eef61129b27ffb48c5f7829ba77c44d7e9ac39199055f289a742c4",
+      "nativeWidth": 720,
+      "nativeHeight": 350,
+      "width": 480,
+      "height": 233
+    },
+    {
+      "source": "docs/snippets/fleck/fonts.fleck",
+      "sourceSha256": "366eb7f540055e2ac80339fadab66c952ae463e04bcf7a44766d9f280edd646b",
+      "image": "docs/assets/fleck-fonts-preview.png",
+      "imageSha256": "6067350eaae847b93e07ba491b23660f54bb584482024876f333af22f177f1e8",
+      "nativeWidth": 720,
+      "nativeHeight": 520,
+      "width": 480,
+      "height": 347
+    },
+    {
+      "source": "docs/snippets/fleck/inputs.fleck",
+      "sourceSha256": "c1347d413fbe9f2238403823ebeef87f6daae872cbd85243242a59baf4eb64c1",
+      "image": "docs/assets/fleck-inputs-preview.png",
+      "imageSha256": "a69916643240d1909c6faaabf9ab3ee7e127b34df8c36f02590bd1f33da5f809",
+      "nativeWidth": 720,
+      "nativeHeight": 540,
+      "width": 480,
+      "height": 360
+    },
+    {
+      "source": "docs/snippets/fleck/layout.fleck",
+      "sourceSha256": "e469f7dc10ebc73ea51903171f1380dc95d71debe74ef7f9f05950cd80056eca",
+      "image": "docs/assets/fleck-layout-preview.png",
+      "imageSha256": "79ead8712eb5e90f519af6445df3d496855e8daaaa71ca08f5ca47c6396123ec",
+      "nativeWidth": 720,
+      "nativeHeight": 460,
+      "width": 480,
+      "height": 307
+    },
+    {
+      "source": "docs/snippets/fleck/popups.fleck",
+      "sourceSha256": "827adaf0aab69d3bc822cde9c807c338bd567b70fb88d5c25a1d3f5df94f38aa",
+      "image": "docs/assets/fleck-popups-preview.png",
+      "imageSha256": "9f1b7ba7753e330aacde28db2ebf27df15b404086e2f09a4ee3e117d52e8bf9c",
+      "nativeWidth": 720,
+      "nativeHeight": 350,
+      "width": 480,
+      "height": 233
+    },
+    {
+      "source": "docs/snippets/fleck/text-layout.fleck",
+      "sourceSha256": "53d528c4d44945e3e22d3698aa38c872193cdf48ff50795061084412b93ebb2f",
+      "image": "docs/assets/fleck-text-layout-preview.png",
+      "imageSha256": "25a01a9b3f0a483a59745e9b5490184e514bac8de3e4dc6b08bba155a8c33149",
+      "nativeWidth": 720,
+      "nativeHeight": 560,
+      "width": 480,
+      "height": 373
+    }
+  ]
+}

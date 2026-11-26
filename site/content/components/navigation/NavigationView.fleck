@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="导航视图">
+  <StackPanel>
+    <TextBlock Id="summary" Text="将导航条目与对应内容组合。"/>
+    <StackPanel Id="demo">
+      <NavigationView Height="132"><TabItem Text="文档"><TextBlock Text="文档内容"/></TabItem><TabItem Text="设置"><TextBlock Text="设置内容"/></TabItem></NavigationView>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="各条目使用 TabItem。选中索引适合保存在界面状态中。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="选中的导航项索引。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

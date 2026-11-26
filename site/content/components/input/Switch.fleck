@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="开关">
+  <StackPanel>
+    <TextBlock Id="summary" Text="即时切换一个布尔设置。"/>
+    <StackPanel Id="demo">
+      <Switch Text="启用通知" Value="1"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="适合按下即生效的设置。需要确认提交时使用表单控件配合按钮。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="0 关闭，1 打开。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

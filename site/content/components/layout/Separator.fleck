@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="分隔线">
+  <StackPanel>
+    <TextBlock Id="summary" Text="在一组内容或操作之间提供视觉分隔。"/>
+    <StackPanel Id="demo">
+      <StackPanel Spacing="8"><TextBlock Text="上一组"/><Separator/><TextBlock Text="下一组"/></StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="在线性布局中选择对应的方向，使分隔线横跨内容或隔开左右两组。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Orientation" Text="水平或垂直。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

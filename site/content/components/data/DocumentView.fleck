@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="文档阅读">
+  <StackPanel>
+    <TextBlock Id="summary" Text="呈现可选择的正文、链接、代码和表格。"/>
+    <StackPanel Id="demo">
+      <DocumentView Id="demo-document" Height="130"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="通过 ui_document_load 或语言包装接口载入结构化数据。用 ui_document_take_event 获取链接和复制动作。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Height" Text="文档视口的可用高度。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

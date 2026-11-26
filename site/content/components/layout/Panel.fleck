@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="面板">
+  <StackPanel>
+    <TextBlock Id="summary" Text="以普通容器承载一组视觉内容。"/>
+    <StackPanel Id="demo">
+      <Panel Padding="14"><TextBlock Text="面板内的内容"/></Panel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="需要手动定位时选 Canvas，需要结构化轨道时选 Grid。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Padding" Text="四周内部边距。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

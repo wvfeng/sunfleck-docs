@@ -1,0 +1,8 @@
+<Window xmlns="urn:sunfleck:v1" Title="快速开始">
+  <StackPanel Spacing="18">
+    <TextBlock Text="快速开始" FontSize="38" FontWeight="Bold" Foreground="#112F45"/>
+    <TextBlock Text="选择语言和界面编写方式，用对应的 SDK 创建第一个项目。" FontSize="16" Foreground="#506A7E" TextWrapping="Wrap"/>
+    <Slot Name="Languages"/>
+    <Switch Id="site-fleck" Text="使用 Fleck" Value="1" Width="154"/>
+  </StackPanel>
+</Window>

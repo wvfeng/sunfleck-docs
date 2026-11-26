@@ -1,0 +1,24 @@
+<Window xmlns="urn:sunfleck:v1" Title="共享尺寸与内容呈现" Width="640" Height="400">
+  <ScrollView HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+    <StackPanel Spacing="8" Padding="12">
+      <Grid ColumnDefinitions="Auto@Label,*" Spacing="8">
+        <Label Text="名称"/><TextBox Grid.Column="1" Text="Sunfleck"/>
+      </Grid>
+      <Grid ColumnDefinitions="Auto@Label,*" Spacing="8">
+        <Label Text="工作目录"/><TextBox Grid.Column="1" Text="Documents"/>
+      </Grid>
+      <Button HorizontalAlignment="Left">
+        <StackPanel Orientation="Horizontal" Spacing="6">
+          <Border Width="12" Height="12" Background="#3577C6" VerticalAlignment="Center"/>
+          <Label Text="保存"/>
+        </StackPanel>
+      </Button>
+      <Viewbox Height="96">
+        <Canvas Width="100" Height="40">
+          <Border Width="64" Height="30" Background="#DCE8F7"/>
+          <Border Canvas.Left="44" Canvas.Top="10" Panel.ZIndex="1" Width="56" Height="30" Background="#3577C6"/>
+        </Canvas>
+      </Viewbox>
+    </StackPanel>
+  </ScrollView>
+</Window>

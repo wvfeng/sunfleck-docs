@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="滚动容器">
+  <StackPanel>
+    <TextBlock Id="summary" Text="让用户滚动查看超出视口的内容。"/>
+    <StackPanel Id="demo">
+      <ScrollView Height="115" VerticalScrollBarVisibility="Visible"><StackPanel Spacing="8"><Label Text="第一行"/><Label Text="第二行"/><Label Text="第三行"/><Label Text="继续向下滚动"/><Label Text="最后一行"/></StackPanel></ScrollView>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="给滚动区域可用高度，并按需要开启横向滚动。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="VerticalScrollBarVisibility" Text="垂直滚动条策略。"/>
+      <TextBlock Id="HorizontalScrollBarVisibility" Text="水平滚动条策略。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

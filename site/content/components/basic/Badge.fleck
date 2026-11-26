@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="徽标">
+  <StackPanel>
+    <TextBlock Id="summary" Text="标记简短的状态、计数或类别。"/>
+    <StackPanel Id="demo">
+      <StackPanel Orientation="Horizontal" Spacing="8"><Badge Text="新"/><Badge Text="已发布"/></StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="保持文字简短，状态不要只靠颜色表达。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="显示的状态或计数。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

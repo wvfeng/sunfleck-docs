@@ -1,0 +1,17 @@
+{
+  "renderer": "Sunfleck Windows headless software / Radix light",
+  "librarySha256": "6fe47792a1bc91ce09c95890c63296e9f519c08aeccdc780c6428df9cdd8fe1e",
+  "schemaComponents": 57,
+  "examples": [
+    {
+      "source": "docs/snippets/fleck/inlines.fleck",
+      "sourceSha256": "875cd60740610b8cf44ac473bb1efeb7c300b5d87a074695559355561870edf8",
+      "image": "docs/assets/fleck-inlines-preview.png",
+      "imageSha256": "ae4b0ae03f39429818ce05cd194f9bba371af35c7c22a8bdfbdd45fc30e99411",
+      "nativeWidth": 720,
+      "nativeHeight": 440,
+      "width": 480,
+      "height": 293
+    }
+  ]
+}

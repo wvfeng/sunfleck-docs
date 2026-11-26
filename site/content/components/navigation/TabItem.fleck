@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="页签项">
+  <StackPanel>
+    <TextBlock Id="summary" Text="声明页签标题与其对应的内容。"/>
+    <StackPanel Id="demo">
+      <TabView Height="122"><TabItem Text="示例"><TextBlock Text="页签一"/></TabItem><TabItem Text="API"><TextBlock Text="页签二"/></TabItem></TabView>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="由 TabView 或 NavigationView 承载，切换由容器控制。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="页签标题。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

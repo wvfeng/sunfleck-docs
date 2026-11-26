@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="单行输入">
+  <StackPanel>
+    <TextBlock Id="summary" Text="编辑一行普通文字。"/>
+    <StackPanel Id="demo">
+      <TextBox Width="260" Height="36" Text="可以编辑这一行"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="双向绑定可选择逐次更新或失焦提交。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="当前输入文字。"/>
+      <TextBlock Id="IsEnabled" Text="是否允许交互。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

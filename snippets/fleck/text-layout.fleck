@@ -1,0 +1,13 @@
+<Window xmlns="urn:sunfleck:v1" Title="Sunfleck text layout" Width="720" Height="560">
+  <Border Background="#f5f7fc" BorderBrush="#c8d3e3" BorderThickness="1" CornerRadius="16" Padding="20">
+    <StackPanel FontFamily="Segoe UI" FontSize="18" Foreground="#ff224466" Spacing="10">
+      <TextBlock Text="Text layout and appearance" FontSize="28" FontWeight="Bold" Height="48"/>
+      <TextBlock Text="Centered · explicit line height" TextAlignment="Center" LineHeight="32" Height="44"/>
+      <TextBlock Text="Underline and strikethrough" TextDecorations="Underline,Strikethrough" Height="38"/>
+      <TextBlock Text="An explicit word ellipsis keeps this sentence in a narrow column." Width="260" HorizontalAlignment="Left" TextWrapping="NoWrap" TextTrimming="WordEllipsis" Height="38"/>
+      <TextBlock Text="Wrapped paragraphs share the same DirectWrite layout used by the editing caret and selection." Width="380" HorizontalAlignment="Left" TextWrapping="Wrap" LineHeight="28" Height="96"/>
+      <TextBlock Text="שלום · مرحبا · Sunfleck" FlowDirection="RightToLeft" TextAlignment="Right" Height="38"/>
+      <TextArea Text="Editable text with a 30 pixel line height. Select and type here." LineHeight="30" Height="84"/>
+    </StackPanel>
+  </Border>
+</Window>

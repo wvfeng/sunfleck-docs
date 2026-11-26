@@ -1,0 +1,22 @@
+<Window xmlns="urn:sunfleck:v1" Title="按钮">
+  <StackPanel>
+    <TextBlock Id="summary" Text="触发保存、提交等离散操作，也可承载自定义内容。"/>
+    <StackPanel Id="demo">
+      <StackPanel Spacing="10">
+        <WrapPanel Spacing="12" Height="36">
+          <Button Id="demo-button" Content="确认" Width="104" Height="36"/>
+          <Switch Id="demo-disabled" Text="禁用按钮" Width="126" Height="36"/>
+        </WrapPanel>
+        <TextBlock Id="demo-button-result" Text="等待点击确认" Height="28"/>
+      </StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="优先用 Content 提供明确的动词。处理耗时任务时将 CommandMode 设为 Async，并在模型中导出对应的异步命令。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Content" Text="按钮文字或内容。"/>
+      <TextBlock Id="Command" Text="绑定到宿主模型导出的命令。"/>
+      <TextBlock Id="CommandMode" Text="Sync 同步执行，Async 走异步执行器。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

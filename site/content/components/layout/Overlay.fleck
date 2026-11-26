@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="叠放层">
+  <StackPanel>
+    <TextBlock Id="summary" Text="将多个子节点放在同一区域。"/>
+    <StackPanel Id="demo">
+      <Overlay Height="80"><Border Background="#E5F4FA"/><TextBlock Text="盖在底层背景上的内容" HorizontalAlignment="Center" VerticalAlignment="Center"/></Overlay>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="覆盖层建议使用适当的命中策略，以免背景遮罩拦截交互。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Padding" Text="叠放区域的内边距。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

@@ -1,0 +1,12 @@
+<Window xmlns="urn:sunfleck:v1" Title="Sunfleck fonts" Width="720" Height="520">
+  <Border Background="#f5f7fc" BorderBrush="#c8d3e3" BorderThickness="1" CornerRadius="16" Padding="20">
+    <StackPanel FontFamily="Segoe UI" FontSize="18" Spacing="12">
+      <TextBlock Text="Fonts in Sunfleck" FontSize="34" FontWeight="Bold" Height="56"/>
+      <TextBlock Text="Inherited Segoe UI, 18 logical pixels" Height="36"/>
+      <TextBlock Text="A lighter voice, an italic accent" FontWeight="Light" FontStyle="Italic" FontSize="24" Height="42"/>
+      <TextBox Text="Consolas: edit, select, type" FontFamily="Consolas" FontSize="22"/>
+      <TextBlock Text="中文字体回退 · é · 🌱" FontSize="24" Height="48"/>
+      <Button Content="Bold button" FontWeight="Bold" FontSize="20"/>
+    </StackPanel>
+  </Border>
+</Window>

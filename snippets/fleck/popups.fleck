@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="菜单与弹出层" Width="720" Height="350">
+  <StackPanel Padding="16" Spacing="12">
+    <MenuBar><ComboBox Text="文件"><ListItem Text="新建"/><ListItem Text="保存"/></ComboBox></MenuBar>
+    <Button Id="target" Content="悬停查看 Tooltip，右键打开 ContextMenu"/>
+    <Tooltip Anchor="target"><TextBlock Text="这是目标按钮的提示"/></Tooltip>
+    <ContextMenu Anchor="target"><Button Content="上下文操作（未绑定业务）"/></ContextMenu>
+    <Label Text="Popup 默认隐藏，应用通过 Value 控制开关"/>
+    <Popup><InfoBar Text="弹出内容"/></Popup>
+    <Dialog Value="1">
+      <TextBlock Text="Dialog：当前为打开状态"/>
+      <TextBlock Text="按 Escape 关闭后可操作背后的菜单和按钮"/>
+    </Dialog>
+  </StackPanel>
+</Window>

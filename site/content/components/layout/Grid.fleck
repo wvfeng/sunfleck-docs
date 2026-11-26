@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="网格布局">
+  <StackPanel>
+    <TextBlock Id="summary" Text="使用固定、自动或星号轨道进行二维对齐。"/>
+    <StackPanel Id="demo">
+      <Grid RowDefinitions="40,40" ColumnDefinitions="120,*" Spacing="8"><Badge Text="固定列"/><TextBlock Grid.Column="1" Text="弹性列"/><TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="第二行跨两列"/></Grid>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="行列索引从 0 开始。跨轨道时使用 Grid.RowSpan 和 Grid.ColumnSpan。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="RowDefinitions" Text="以逗号分隔的行轨道。"/>
+      <TextBlock Id="ColumnDefinitions" Text="以逗号分隔的列轨道。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

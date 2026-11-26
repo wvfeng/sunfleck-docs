@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="可调分栏">
+  <StackPanel>
+    <TextBlock Id="summary" Text="用可拖动分隔条划分两个区域。"/>
+    <StackPanel Id="demo">
+      <SplitView Height="104" Value="42"><TextBlock Text="左侧内容"/><TextBlock Text="右侧内容"/></SplitView>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="适合目录和详情并列。拖动后可读取 Value 保存分栏比例。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="第一分区占用的比例。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

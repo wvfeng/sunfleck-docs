@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="数据表格">
+  <StackPanel>
+    <TextBlock Id="summary" Text="以行列呈现结构化数据，可接入排序与单元格编辑。"/>
+    <StackPanel Id="demo">
+      <DataGrid Height="130"><Grid ColumnDefinitions="*,*"><TextBlock Text="控件"/><TextBlock Grid.Column="1" Text="状态"/></Grid><Grid ColumnDefinitions="*,*"><TextBlock Text="Button"/><TextBox Grid.Column="1" Text="可编辑"/></Grid></DataGrid>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="静态行用 Grid 声明。大量数据可接入列定义和项目集合，由框架按视口实现行列。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="ItemsSource" Text="数据行来源。"/>
+      <TextBlock Id="Height" Text="数据视口高度。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

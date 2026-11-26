@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="堆叠面板">
+  <StackPanel>
+    <TextBlock Id="summary" Text="沿单一方向顺序排列子节点。"/>
+    <StackPanel Id="demo">
+      <StackPanel Orientation="Horizontal" Spacing="10"><Badge Text="第一项"/><Badge Text="第二项"/><Badge Text="第三项"/></StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="适合表单和操作栏。需要二维对齐时使用 Grid。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Orientation" Text="设置水平或垂直方向。"/>
+      <TextBlock Id="Spacing" Text="相邻子项的间距。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

@@ -1,0 +1,18 @@
+<Window xmlns="urn:sunfleck:v1" Title="图片">
+  <StackPanel>
+    <TextBlock Id="summary" Text="通过 Source 绑定应用注册的图像资源。"/>
+    <StackPanel Id="demo">
+      <StackPanel Spacing="4">
+        <Image Source="{Binding SampleImage}" Width="260" MaxWidth="260" Height="224" Stretch="Uniform"/>
+        <TextBlock Text="阿波罗 17 号拍摄的地球 · NASA" FontSize="13"/>
+        <ToggleButton Id="demo-image-toggle" Text="隐藏图片" Width="116"/>
+      </StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="宿主将 JPEG、PNG 等图像解码为 RGBA，再调用 ui_app_register_image_rgba 注册资源。将资源键写入模型，并通知 Source 绑定更新。可切换示例中的按钮，观察清空资源键和恢复资源的效果。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Stretch" Text="选择对齐、填充或等比缩放。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

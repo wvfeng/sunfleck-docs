@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Sunfleck Docs: 在 Edge 调试",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://127.0.0.1:8790/",
+      "webRoot": "${workspaceFolder}/site",
+      "preLaunchTask": "Sunfleck Docs: 启动预览服务器"
+    }
+  ]
+}

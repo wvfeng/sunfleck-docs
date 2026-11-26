@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="搜索框">
+  <StackPanel>
+    <TextBlock Id="summary" Text="接收查询文本，并提供搜索动作入口。"/>
+    <StackPanel Id="demo">
+      <SearchBox Width="260" Height="36" Text="搜索关键字"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="应用可监听文字变化提供即时筛选，并在激活命令时执行完整搜索。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="当前查询。"/>
+      <TextBlock Id="Command" Text="搜索动作。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

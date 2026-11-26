@@ -1,0 +1,11 @@
+<Border xmlns="urn:sunfleck:v1" BorderBrush="#DCE7EE" BorderThickness="1" CornerRadius="10">
+  <StackPanel Spacing="0">
+    <Border Background="#F7FAFC" BorderBrush="#DCE7EE" BorderThickness="0,0,0,1" Padding="12">
+      <TextBlock Text="实时预览" FontWeight="SemiBold" Foreground="#264659" Height="28"/>
+    </Border>
+    <Border Id="example-preview" Padding="20" Background="#FFFFFF">
+      <Slot Name="Demo"/>
+    </Border>
+    <Slot Name="Source"/>
+  </StackPanel>
+</Border>

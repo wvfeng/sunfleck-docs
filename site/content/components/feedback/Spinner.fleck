@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="加载指示器">
+  <StackPanel>
+    <TextBlock Id="summary" Text="在无法计算完成比例时显示等待状态。"/>
+    <StackPanel Id="demo">
+      <Spinner Width="42" Height="42"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="任务完成后隐藏指示器并给出下一步或结果。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Visibility" Text="控制是否可见及占据布局空间。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

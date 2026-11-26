@@ -1,0 +1,21 @@
+<Window xmlns="urn:sunfleck:v1" Title="Button styles">
+  <Window.Resources>
+    <Resource Key="Accent" Value="#3468ac"/>
+    <Style Key="Action" TargetType="Button">
+      <Setter Property="Height" Value="36"/>
+      <Style.Triggers>
+        <Trigger Property="IsEnabled" Value="false">
+          <Setter Property="Opacity" Value="0.45"/>
+        </Trigger>
+      </Style.Triggers>
+      <Setter Property="Foreground" Value="{StaticResource Accent}"/>
+    </Style>
+    <Style TargetType="Button" BasedOn="{StaticResource Action}">
+      <Setter Property="Width" Value="144"/>
+    </Style>
+  </Window.Resources>
+  <StackPanel Spacing="8">
+    <Button Id="save" Content="Save"/>
+    <Button Id="cancel" Content="Cancel" Style="{StaticResource Action}" Height="28"/>
+  </StackPanel>
+</Window>

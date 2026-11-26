@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="列表项">
+  <StackPanel>
+    <TextBlock Id="summary" Text="承载 ListView 或 ComboBox 中的一个选项。"/>
+    <StackPanel Id="demo">
+      <ListView Height="98"><ListItem Text="概览"/><ListItem Text="属性"/></ListView>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="在支持的列表父节点里使用，选择操作由父控件管理。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="显示的项目名称。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

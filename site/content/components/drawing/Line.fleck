@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="线段">
+  <StackPanel>
+    <TextBlock Id="summary" Text="按局部坐标绘制两点之间的线段。"/>
+    <StackPanel Id="demo">
+      <Line Width="150" Height="70" Stroke="#176D8D" StrokeThickness="3"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="线段连接布局区域的左上角和右下角。需要指定任意端点时使用 Path。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Stroke" Text="线段颜色或画刷。"/>
+      <TextBlock Id="StrokeThickness" Text="逻辑像素线宽。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

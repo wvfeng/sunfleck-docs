@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Sunfleck Docs: 构建 Wasm",
+      "type": "cmake",
+      "command": "build",
+      "preset": "vs2026-debug",
+      "targets": [
+        "documentation"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Sunfleck Docs: 启动预览服务器",
+      "type": "process",
+      "command": "${workspaceFolder}/../sdk/local/emsdk/python/3.9.2-nuget_64bit/python.exe",
+      "args": [
+        "-u",
+        "-m",
+        "http.server",
+        "8790",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "${workspaceFolder}/site/out/vs2026-debug/web"
+      ],
+      "isBackground": true,
+      "dependsOn": "Sunfleck Docs: 构建 Wasm",
+      "problemMatcher": [
+        {
+          "owner": "sunfleck-docs",
+          "pattern": {
+            "regexp": "^(.*):(\\d+):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "message": 3
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "(?!)",
+            "endsPattern": "^Serving HTTP on 127\\.0\\.0\\.1 port 8790"
+          }
+        }
+      ]
+    }
+  ]
+}

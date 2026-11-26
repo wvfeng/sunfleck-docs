@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="提示条">
+  <StackPanel>
+    <TextBlock Id="summary" Text="显示当前区域的说明或操作反馈。"/>
+    <StackPanel Id="demo">
+      <InfoBar Text="设置已保存，可以继续编辑。"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="在相关内容附近反馈状态，消息写明结果或下一步。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="显示的提示信息。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

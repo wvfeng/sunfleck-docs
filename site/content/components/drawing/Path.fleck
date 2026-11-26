@@ -1,0 +1,16 @@
+<Window xmlns="urn:sunfleck:v1" Title="路径">
+  <StackPanel>
+    <TextBlock Id="summary" Text="用路径指令描绘轮廓和曲线。"/>
+    <StackPanel Id="demo">
+      <Path Width="140" Height="84" Data="M 8,70 Q 65,-5 132,70 L 8,70 Z" Fill="#B7E1EA" Stroke="#136680" StrokeThickness="2"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="支持 M、L、H、V、Q、C、Z 和相应小写相对指令。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Data" Text="轮廓指令。"/>
+      <TextBlock Id="Fill" Text="封闭区域的填充。"/>
+      <TextBlock Id="Stroke" Text="路径轮廓描边。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

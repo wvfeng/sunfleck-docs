@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="树形列表">
+  <StackPanel>
+    <TextBlock Id="summary" Text="以可展开节点呈现层级结构。"/>
+    <StackPanel Id="demo">
+      <TreeView Height="118"><TreeItem Text="文档" Value="1"><TreeItem Text="组件"/><TreeItem Text="快速开始"/></TreeItem></TreeView>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="用嵌套 TreeItem 表达层级，展开状态由节点控制。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Height" Text="树视口的可用高度。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

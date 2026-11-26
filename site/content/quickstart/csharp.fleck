@@ -1,0 +1,24 @@
+<Window xmlns="urn:sunfleck:v1" Title="C#">
+  <StackPanel Spacing="14">
+    <TextBlock Text="新建空目录，安装 .NET 10 SDK，并将 C# SDK 解压到本地目录。" TextWrapping="Wrap"/>
+    <StackPanel Id="csharp-fleck" Visibility="Visible" Spacing="14">
+      <TextBlock Text="C# · Fleck 页面" FontSize="20" FontWeight="SemiBold" Height="34"/>
+      <TextBlock Text="添加页面和入口文件。运行时会从输出目录加载 main.fleck。" TextWrapping="Wrap"/>
+      <TextArea Id="source-HelloSunfleck.csproj" Text="&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;&#10;  &lt;PropertyGroup&gt;&#10;    &lt;OutputType&gt;Exe&lt;/OutputType&gt;&#10;    &lt;TargetFramework&gt;net10.0&lt;/TargetFramework&gt;&#10;    &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;&#10;    &lt;DefaultItemExcludes&gt;$(DefaultItemExcludes);sdk/**&lt;/DefaultItemExcludes&gt;&#10;  &lt;/PropertyGroup&gt;&#10;  &lt;ItemGroup&gt;&#10;    &lt;None Update=&quot;main.fleck&quot; CopyToOutputDirectory=&quot;PreserveNewest&quot;/&gt;&#10;  &lt;/ItemGroup&gt;&#10;  &lt;Import Project=&quot;$(SunfleckSdkRoot)/share/sunfleck/Sunfleck.props&quot;/&gt;&#10;&lt;/Project&gt;"/>
+      <TextArea Id="source-main.fleck" Text="&lt;Window xmlns=&quot;urn:sunfleck:v1&quot; Title=&quot;Hello Sunfleck&quot; Width=&quot;480&quot; Height=&quot;280&quot;&gt;&#10;  &lt;StackPanel Padding=&quot;20&quot;&gt;&#10;    &lt;TextBlock Text=&quot;Hello Sunfleck&quot;/&gt;&#10;  &lt;/StackPanel&gt;&#10;&lt;/Window&gt;"/>
+      <TextArea Id="source-Program.cs" Text="using Sunfleck;&#10;&#10;using var app = new App();&#10;app.LoadFleck(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, &quot;main.fleck&quot;)));&#10;app.OpenWindow();&#10;app.Run();"/>
+      <TextBlock Text="构建并运行" FontSize="20" FontWeight="Bold"/>
+      <TextArea Id="source-终端" Text="dotnet run --project HelloSunfleck.csproj -c Release -p:SunfleckSdkRoot=&quot;&lt;SDK目录&gt;&quot;"/>
+      <TextBlock Text="把 &lt;SDK目录&gt; 替换为对应语言 SDK 的解压位置，运行后会打开带有 Hello Sunfleck 的窗口。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="csharp-code" Visibility="Collapsed" Spacing="14">
+      <TextBlock Text="C# · 纯代码界面" FontSize="20" FontWeight="SemiBold" Height="34"/>
+      <TextBlock Text="添加项目文件和入口代码，由宿主直接创建和配置控件。" TextWrapping="Wrap"/>
+      <TextArea Id="source-HelloSunfleck.csproj" Text="&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;&#10;  &lt;PropertyGroup&gt;&#10;    &lt;OutputType&gt;Exe&lt;/OutputType&gt;&#10;    &lt;TargetFramework&gt;net10.0&lt;/TargetFramework&gt;&#10;    &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;&#10;    &lt;DefaultItemExcludes&gt;$(DefaultItemExcludes);sdk/**&lt;/DefaultItemExcludes&gt;&#10;  &lt;/PropertyGroup&gt;&#10;  &lt;Import Project=&quot;$(SunfleckSdkRoot)/share/sunfleck/Sunfleck.props&quot;/&gt;&#10;&lt;/Project&gt;"/>
+      <TextArea Id="source-Program.cs" Text="using Sunfleck;&#10;&#10;using var app = new App();&#10;var text = app.CreateNode(NodeKind.TextBlock);&#10;text.Text = &quot;Hello Sunfleck&quot;;&#10;app.SetRoot(text);&#10;app.OpenWindow();&#10;app.Run();"/>
+      <TextBlock Text="构建并运行" FontSize="20" FontWeight="Bold"/>
+      <TextArea Id="source-终端" Text="dotnet run --project HelloSunfleck.csproj -c Release -p:SunfleckSdkRoot=&quot;&lt;SDK目录&gt;&quot;"/>
+      <TextBlock Text="把 &lt;SDK目录&gt; 替换为对应语言 SDK 的解压位置，运行后会打开带有 Hello Sunfleck 的窗口。" TextWrapping="Wrap"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

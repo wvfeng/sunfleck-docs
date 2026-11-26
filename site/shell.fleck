@@ -1,0 +1,32 @@
+<Window xmlns="urn:sunfleck:v1" xmlns:docs="urn:sunfleck:documentation" Title="Sunfleck 组件文档" Width="1280" Height="820">
+  <Border Background="#FFFFFF">
+    <DockPanel Padding="0" Spacing="0">
+      <Border Dock="Top" Height="64" Background="#F7FAFC" BorderBrush="#E1E9F0" BorderThickness="0,0,0,1" Padding="16">
+        <Flex Spacing="12">
+          <Button Id="site-menu" Text="目录" Width="64"/>
+          <Hyperlink Id="site-home" Text="Sunfleck" Width="116" FontSize="22" FontWeight="Bold" Foreground="#0B516B"/>
+          <TextBlock Text="搜索" Width="34" VerticalAlignment="Center" Foreground="#45677D"/>
+          <TextBox Id="site-search" MinWidth="76" MaxWidth="240" Text=""/>
+          <Hyperlink Id="site-quick" Text="快速开始" Width="76"/>
+        </Flex>
+      </Border>
+      <Border Dock="Bottom" Height="32" Background="#F7FAFC" BorderBrush="#E1E9F0" BorderThickness="0,1,0,0" Padding="3">
+        <Button Id="site-registration" Template="docs:NavigationButton" Content="浙ICP备2026068653号-2"
+                Width="170" Height="24" HorizontalAlignment="Center">
+          <TextBlock Text="浙ICP备2026068653号-2" FontSize="12" LineHeight="16" Foreground="#36596F"
+                     TextAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+      </Border>
+      <Border Id="site-sidebar" Dock="Left" Width="228" Background="#F7FAFC" BorderBrush="#E1E9F0" BorderThickness="0,0,1,0">
+        <ScrollView Id="site-nav-scroll" Padding="12" HorizontalScrollBarVisibility="Disabled">
+          <StackPanel Spacing="4"><!--navigation--></StackPanel>
+        </ScrollView>
+      </Border>
+      <ScrollView Id="site-main" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Id="site-article" MaxWidth="1000" Padding="24" Spacing="16">
+          <!--content-->
+        </StackPanel>
+      </ScrollView>
+    </DockPanel>
+  </Border>
+</Window>

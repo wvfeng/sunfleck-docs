@@ -1,0 +1,6 @@
+<Window xmlns="urn:sunfleck:v1" Title="页面不存在">
+  <StackPanel Spacing="12">
+    <TextBlock Text="页面不存在" FontSize="34" FontWeight="Bold"/>
+    <Button Id="open-overview" Text="返回组件总览" Width="144"/>
+  </StackPanel>
+</Window>

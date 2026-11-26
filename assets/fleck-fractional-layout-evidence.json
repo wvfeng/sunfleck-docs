@@ -1,0 +1,17 @@
+{
+  "renderer": "Sunfleck Windows headless software / Radix light",
+  "librarySha256": "1b852cd8e2a1203a507ccbcee982ccf8491104c1714702530ee8a7e723484fd3",
+  "schemaComponents": 57,
+  "examples": [
+    {
+      "source": "docs/snippets/fleck/fractional-layout.fleck",
+      "sourceSha256": "8b5861793129009fe0371634c0af75b4ba60979bcd036c5e8f6f2c2a689ff462",
+      "image": "docs/assets/fleck-fractional-layout-preview.png",
+      "imageSha256": "52be1808f9ff90c082842a10e074c51e7a9228b9091e9b8869aa7e0191390b96",
+      "nativeWidth": 640,
+      "nativeHeight": 420,
+      "width": 480,
+      "height": 315
+    }
+  ]
+}

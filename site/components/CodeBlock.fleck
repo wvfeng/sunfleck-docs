@@ -1,0 +1,9 @@
+<Border xmlns="urn:sunfleck:v1" Background="#F4F7FA" BorderBrush="#DFE8EE" BorderThickness="1" CornerRadius="6" Padding="10">
+  <StackPanel Spacing="2">
+    <DockPanel Spacing="8">
+      <Button Id="copy-KEY" Dock="Right" Text="复制" Width="58" Height="30"/>
+      <TextBlock Text="LABEL" FontWeight="SemiBold" Foreground="#175A73"/>
+    </DockPanel>
+    <TextBlock Id="code-KEY" Text="SOURCE" FontFamily="monospace" FontSize="13" Foreground="#163C50" TextWrapping="Wrap"/>
+  </StackPanel>
+</Border>

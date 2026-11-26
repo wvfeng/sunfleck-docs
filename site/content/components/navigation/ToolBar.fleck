@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="工具栏">
+  <StackPanel>
+    <TextBlock Id="summary" Text="把当前场景的常用操作放在一处。"/>
+    <StackPanel Id="demo">
+      <ToolBar Spacing="8"><Button Text="新建"/><Button Text="打开"/><ToggleButton Text="锁定"/></ToolBar>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="按使用频率排列操作，并为重要操作提供文字或提示。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Spacing" Text="工具项之间的间距。"/>
+      <TextBlock Id="Padding" Text="工具栏内部边距。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

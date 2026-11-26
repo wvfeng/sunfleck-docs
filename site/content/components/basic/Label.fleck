@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="标签">
+  <StackPanel>
+    <TextBlock Id="summary" Text="为输入字段和数据项提供清晰的文字名称。"/>
+    <StackPanel Id="demo">
+      <StackPanel Spacing="6"><Label Text="项目名称"/><TextBox Text="Sunfleck" Height="36"/></StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="把标签放在对应控件附近，并让描述在用户输入后仍然可见。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="标签文字。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

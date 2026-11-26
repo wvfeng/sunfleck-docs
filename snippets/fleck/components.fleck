@@ -1,0 +1,27 @@
+<Window xmlns="urn:sunfleck:v1" Title="Fleck 组件预览" Width="760" Height="520">
+  <DockPanel Padding="16" Spacing="12">
+    <ToolBar Dock="Top" Spacing="8">
+      <Button Content="新建"/>
+      <Button Content="保存"/>
+      <SearchBox Id="query" Text="查询"/>
+    </ToolBar>
+    <InfoBar Dock="Bottom" Text="已保存"/>
+    <Grid ColumnDefinitions="230,*" Spacing="16">
+      <StackPanel Width="230" Weight="0" Spacing="8">
+        <TextBlock Text="设置"/>
+        <CheckBox Text="启用自动保存" Value="1"/>
+        <Switch Text="深色主题"/>
+        <Slider Id="scale" Value="60"/>
+        <ProgressBar Value="60"/>
+      </StackPanel>
+      <Card Grid.Column="1">
+        <StackPanel Padding="16" Spacing="8">
+          <TextBlock Text="内容"/>
+          <TextBox Text="可编辑的单行文本"/>
+          <TextArea Text="可编辑的多行文本"/>
+          <Button Content="应用"/>
+        </StackPanel>
+      </Card>
+    </Grid>
+  </DockPanel>
+</Window>

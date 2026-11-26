@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="停靠分割">
+  <StackPanel>
+    <TextBlock Id="summary" Text="将停靠工作区分为两个可调整区域。"/>
+    <StackPanel Id="demo">
+      <DockHost Height="190"><DockSplit Orientation="Horizontal" Ratio="35"><DockGroup><DockTool Id="dock-tools" Title="工具"><TextBlock Text="工具栏区"/></DockTool></DockGroup><DockGroup><DockDocument Id="dock-doc" Title="文档"><TextBlock Text="主要工作区"/></DockDocument></DockGroup></DockSplit></DockHost>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="两个子区域可以是 DockGroup 或其他 DockSplit。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Orientation" Text="两个子区的排列方向。"/>
+      <TextBlock Id="Ratio" Text="第一个区域所占百分比，范围 1–99。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

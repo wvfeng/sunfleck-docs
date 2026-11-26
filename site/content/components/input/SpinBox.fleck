@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="数字步进框">
+  <StackPanel>
+    <TextBlock Id="summary" Text="用增减按钮调整整数值。"/>
+    <StackPanel Id="demo">
+      <SpinBox Width="150" Value="12"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="需要任意业务范围或步进规则时，在应用侧校验和转换值。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="0 到 100 的数值。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

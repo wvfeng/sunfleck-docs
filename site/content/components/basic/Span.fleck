@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="行内分组">
+  <StackPanel>
+    <TextBlock Id="summary" Text="让同一组行内文字共同继承样式。"/>
+    <StackPanel Id="demo">
+      <TextBlock FontSize="20"><Span Foreground="#087995"><Run Text="同组 "/><Run Text="片段" FontWeight="Bold"/></Span><Run Text=" 组外文字"/></TextBlock>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="将共享样式放在 Span，个别 Run 可以覆盖继承值。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Foreground" Text="向后代传递文字颜色。"/>
+      <TextBlock Id="FontSize" Text="向后代传递字号。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

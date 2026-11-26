@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="绝对布局">
+  <StackPanel>
+    <TextBlock Id="summary" Text="在局部坐标中精确定位子元素。"/>
+    <StackPanel Id="demo">
+      <Canvas Height="112"><Rectangle Canvas.Left="16" Canvas.Top="12" Width="92" Height="52" Fill="#87CADC"/><TextBlock Canvas.Left="132" Canvas.Top="31" Text="按逻辑像素定位"/></Canvas>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="左上角是坐标原点。位置设在子节点的 Canvas.Left 和 Canvas.Top 上。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Width" Text="画布的布局宽度。"/>
+      <TextBlock Id="Height" Text="画布的布局高度。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

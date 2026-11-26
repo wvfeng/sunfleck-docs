@@ -1,0 +1,17 @@
+<Window xmlns="urn:sunfleck:v1" Title="Border surfaces" Width="520" Height="420">
+  <StackPanel Spacing="16" Padding="12">
+    <TextBlock Text="Built-in Border"/>
+    <Border Background="#edf4ff" BorderBrush="#3569ab" BorderThickness="1" CornerRadius="12" Padding="16">
+      <StackPanel Spacing="8">
+        <TextBlock Text="A reusable content surface"/>
+        <TextBox Text="Padding and border thickness participate in layout"/>
+      </StackPanel>
+    </Border>
+    <Border Background="#fff5e8" BorderBrush="#c77a22" BorderThickness="6,2,2,2" CornerRadius="2,14,14,2" Padding="12">
+      <TextBlock Text="Independent side thickness and corner radii"/>
+    </Border>
+    <Border BorderBrush="#509487" BorderThickness="1.5" CornerRadius="8" Padding="10">
+      <Button Content="Transparent background"/>
+    </Border>
+  </StackPanel>
+</Window>

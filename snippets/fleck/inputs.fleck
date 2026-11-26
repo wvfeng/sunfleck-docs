@@ -1,0 +1,31 @@
+<Window xmlns="urn:sunfleck:v1" Title="输入与状态组件" Width="720" Height="540">
+  <Grid ColumnDefinitions="*,*" Padding="12" Spacing="16">
+    <StackPanel Spacing="8">
+      <Label Text="Button / ToggleButton"/>
+      <ToolBar Spacing="6"><Button Content="保存"/><Button Text="图标"/><ToggleButton Text="置顶" Value="1"/></ToolBar>
+      <Hyperlink Text="Hyperlink：业务回调控制跳转"/>
+      <CheckBox Text="CheckBox：启用通知" Value="1"/>
+      <Switch Text="Switch：自动同步" Value="1"/>
+      <Flex><RadioButton Text="方案 A" Value="1"/><RadioButton Text="方案 B"/></Flex>
+      <Label Text="SpinBox / Slider / ProgressBar"/>
+      <SpinBox Value="12"/>
+      <Slider Value="60"/>
+      <ProgressBar Value="60"/>
+      <Separator/>
+      <InfoBar Text="InfoBar：准备就绪"/>
+    </StackPanel>
+    <StackPanel IsFocusScope="true" Grid.Column="1" Spacing="8">
+      <Label Text="TextBox：点击标签聚焦" Anchor="name"/>
+      <TextBox Id="name" Text="Sunfleck"/>
+      <Label Text="PasswordBox"/>
+      <PasswordBox Text="Secret"/>
+      <Label Text="TextArea：多行编辑"/>
+      <TextArea Text="第一行&#10;第二行"/>
+      <Label Text="SearchBox：Enter 提交动作"/>
+      <SearchBox TabIndex="0" Text="搜索组件"/>
+      <Badge Text="Badge：新功能"/>
+      <Label Text="Spinner / Image（未加载图片）"/>
+      <Flex><Spinner/><Image/></Flex>
+    </StackPanel>
+  </Grid>
+</Window>

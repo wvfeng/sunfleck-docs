@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="进度条">
+  <StackPanel>
+    <TextBlock Id="summary" Text="用填充比例显示任务完成度。"/>
+    <StackPanel Id="demo">
+      <ProgressBar Width="260" Value="62"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="有可量化进度时将模型值映射为百分比。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="0 到 100 的进度值。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

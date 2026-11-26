@@ -1,0 +1,24 @@
+<Window xmlns="urn:sunfleck:v1" Title="C++">
+  <StackPanel Spacing="14">
+    <TextBlock Text="新建空目录，准备 C++20 工具链、CMake 3.25+ 与 Ninja。将 C++ SDK 解压到本地目录。" TextWrapping="Wrap"/>
+    <StackPanel Id="cpp-fleck" Visibility="Visible" Spacing="14">
+      <TextBlock Text="C++ · Fleck 页面" FontSize="20" FontWeight="SemiBold" Height="34"/>
+      <TextBlock Text="添加页面和入口文件。运行时会从输出目录加载 main.fleck。" TextWrapping="Wrap"/>
+      <TextArea Id="source-CMakeLists.txt" Text="cmake_minimum_required(VERSION 3.25)&#10;project(HelloSunfleck LANGUAGES CXX)&#10;find_package(Sunfleck 1.0.0 CONFIG REQUIRED)&#10;add_executable(HelloSunfleck main.cpp)&#10;target_link_libraries(HelloSunfleck PRIVATE Sunfleck::sunfleck)&#10;configure_file(main.fleck main.fleck COPYONLY)"/>
+      <TextArea Id="source-main.fleck" Text="&lt;Window xmlns=&quot;urn:sunfleck:v1&quot; Title=&quot;Hello Sunfleck&quot; Width=&quot;480&quot; Height=&quot;280&quot;&gt;&#10;  &lt;StackPanel Padding=&quot;20&quot;&gt;&#10;    &lt;TextBlock Text=&quot;Hello Sunfleck&quot;/&gt;&#10;  &lt;/StackPanel&gt;&#10;&lt;/Window&gt;"/>
+      <TextArea Id="source-main.cpp" Text="#include &lt;sunfleck/ui.hpp&gt;&#10;#include &lt;fstream&gt;&#10;#include &lt;iterator&gt;&#10;#include &lt;string&gt;&#10;&#10;int main()&#10;{&#10;    sunfleck::App app(UI_AUTO);&#10;    std::ifstream file(&quot;main.fleck&quot;, std::ios::binary);&#10;    if (!file) { return 1; }&#10;    const std::string page{std::istreambuf_iterator&lt;char&gt;(file), {}};&#10;    app.loadFleck(page);&#10;    app.openWindow();&#10;    return app.run() == UI_EXITED ? 0 : 1;&#10;}"/>
+      <TextBlock Text="构建并运行" FontSize="20" FontWeight="Bold"/>
+      <TextArea Id="source-终端" Text="cmake -S . -B out -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=&quot;&lt;SDK目录&gt;&quot;&#10;cmake --build out&#10;cmake -E chdir out ./HelloSunfleck"/>
+      <TextBlock Text="把 &lt;SDK目录&gt; 替换为对应语言 SDK 的解压位置，运行后会打开带有 Hello Sunfleck 的窗口。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="cpp-code" Visibility="Collapsed" Spacing="14">
+      <TextBlock Text="C++ · 纯代码界面" FontSize="20" FontWeight="SemiBold" Height="34"/>
+      <TextBlock Text="添加项目文件和入口代码，由宿主直接创建和配置控件。" TextWrapping="Wrap"/>
+      <TextArea Id="source-CMakeLists.txt" Text="cmake_minimum_required(VERSION 3.25)&#10;project(HelloSunfleck LANGUAGES CXX)&#10;find_package(Sunfleck 1.0.0 CONFIG REQUIRED)&#10;add_executable(HelloSunfleck main.cpp)&#10;target_link_libraries(HelloSunfleck PRIVATE Sunfleck::sunfleck)"/>
+      <TextArea Id="source-main.cpp" Text="#include &lt;sunfleck/ui.hpp&gt;&#10;&#10;int main()&#10;{&#10;    sunfleck::App app(UI_AUTO);&#10;    auto text = app.createNode(UI_TEXT_BLOCK);&#10;    text.setText(&quot;Hello Sunfleck&quot;);&#10;    app.setRoot(text);&#10;    app.openWindow();&#10;    return app.run() == UI_EXITED ? 0 : 1;&#10;}"/>
+      <TextBlock Text="构建并运行" FontSize="20" FontWeight="Bold"/>
+      <TextArea Id="source-终端" Text="cmake -S . -B out -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=&quot;&lt;SDK目录&gt;&quot;&#10;cmake --build out&#10;cmake -E chdir out ./HelloSunfleck"/>
+      <TextBlock Text="把 &lt;SDK目录&gt; 替换为对应语言 SDK 的解压位置，运行后会打开带有 Hello Sunfleck 的窗口。" TextWrapping="Wrap"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

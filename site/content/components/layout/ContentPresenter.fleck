@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="内容呈现器">
+  <StackPanel>
+    <TextBlock Id="summary" Text="在内容模板中安排内容的显示位置。"/>
+    <StackPanel Id="demo">
+      <ContentControl><ContentPresenter><Button Text="由内容呈现器显示" Width="160"/></ContentPresenter></ContentControl>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="在模板内使用 ContentPresenter 接收宿主内容；外观可由外层 Border 或布局节点决定。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="HorizontalAlignment" Text="控制呈现位置的水平对齐。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

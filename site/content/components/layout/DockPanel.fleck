@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="停靠面板">
+  <StackPanel>
+    <TextBlock Id="summary" Text="将内容沿四边排列，最后一项填充剩余区域。"/>
+    <StackPanel Id="demo">
+      <DockPanel Height="112" Spacing="8"><Border Dock="Top" Background="#DBEFF6" Height="32"><TextBlock Text="顶部"/></Border><Border Dock="Left" Background="#E8F2F7" Width="94"><TextBlock Text="左侧"/></Border><TextBlock Text="主要内容"/></DockPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="依照布局顺序声明停靠项，最后声明填充项。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Spacing" Text="停靠子项之间的间距。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

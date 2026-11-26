@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="弹性布局">
+  <StackPanel>
+    <TextBlock Id="summary" Text="使用伸缩权重向子项分配可用空间。"/>
+    <StackPanel Id="demo">
+      <Flex Spacing="10"><Button Text="固定宽度" Width="115" Weight="0"/><Button Text="弹性 1" Weight="1"/><Button Text="弹性 2" Weight="2"/></Flex>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="固定宽度适合短操作，其余空间可按 Weight 交给内容区。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Spacing" Text="子项之间的间距。"/>
+      <TextBlock Id="Padding" Text="容器内部边距。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

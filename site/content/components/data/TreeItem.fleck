@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="树节点">
+  <StackPanel>
+    <TextBlock Id="summary" Text="承载一个层级节点和可展开的后代。"/>
+    <StackPanel Id="demo">
+      <TreeView Height="118"><TreeItem Text="项目" Value="1"><TreeItem Text="main.fleck"/><TreeItem Text="CMakeLists.txt"/></TreeItem></TreeView>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="将节点放在 TreeView 或其他 TreeItem 下，叶节点不显示展开三角。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="节点标题。"/>
+      <TextBlock Id="Value" Text="1 时展开。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="弹出层">
+  <StackPanel>
+    <TextBlock Id="summary" Text="显示锚定或临时覆盖于页面的内容。"/>
+    <StackPanel Id="demo">
+      <StackPanel Spacing="8"><Button Id="demo-open" Text="切换弹出层" Width="146"/><Popup Id="demo-popup" Anchor="demo-open"><InfoBar Text="这是弹出层内容"/></Popup></StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="从动作回调中修改 Value，并为锚定弹层提供稳定 Id。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="1 打开，0 关闭。"/>
+      <TextBlock Id="Anchor" Text="锚点控件的 Id。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

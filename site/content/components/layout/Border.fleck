@@ -1,0 +1,17 @@
+<Window xmlns="urn:sunfleck:v1" Title="边框容器">
+  <StackPanel>
+    <TextBlock Id="summary" Text="用背景、边框和圆角包围一个子元素。"/>
+    <StackPanel Id="demo">
+      <Border Background="#EAF6FA" BorderBrush="#69A9BF" BorderThickness="1,2,3,4" CornerRadius="6,12,18,24" Padding="14"><TextBlock Text="四边厚度与四角半径可独立设置"/></Border>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="需要承载多项时，先放入一个布局面板。圆角仅绘制边框，裁剪由布局属性控制。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Background" Text="内部背景颜色或属性元素画刷。"/>
+      <TextBlock Id="BorderBrush" Text="边框颜色。"/>
+      <TextBlock Id="BorderThickness" Text="依次为左、上、右、下。"/>
+      <TextBlock Id="CornerRadius" Text="依次为左上、右上、右下、左下。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

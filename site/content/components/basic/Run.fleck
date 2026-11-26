@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="文本片段">
+  <StackPanel>
+    <TextBlock Id="summary" Text="在一段文字中为连续字符应用独立样式。"/>
+    <StackPanel Id="demo">
+      <TextBlock FontSize="20"><Run Text="文本包含 "/><Run Text="强调片段" Foreground="#087995" FontWeight="Bold"/></TextBlock>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="Run 用在 TextBlock 或 Span 内，沿用同一行的测量与换行。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="行内片段内容。"/>
+      <TextBlock Id="Foreground" Text="覆盖片段文字颜色。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

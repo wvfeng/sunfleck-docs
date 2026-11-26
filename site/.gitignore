@@ -1,0 +1,5 @@
+# documentation
+node_modules/
+out/
+assets/fonts/*.otf
+assets/fonts/*.ttf

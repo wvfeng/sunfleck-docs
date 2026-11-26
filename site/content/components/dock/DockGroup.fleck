@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="停靠分组">
+  <StackPanel>
+    <TextBlock Id="summary" Text="把位于同一区域的停靠项组织为标签组。"/>
+    <StackPanel Id="demo">
+      <DockHost Height="190"><DockGroup><DockDocument Id="dock-first" Title="页面一"><TextBlock Text="第一个文档"/></DockDocument><DockDocument Id="dock-second" Title="页面二"><TextBlock Text="第二个文档"/></DockDocument></DockGroup></DockHost>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="放在 DockHost 或 DockSplit 下。为可持久化的停靠项设置稳定的 Id。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Id" Text="可用于定位分组的标识。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

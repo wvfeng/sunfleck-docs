@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="卡片">
+  <StackPanel>
+    <TextBlock Id="summary" Text="为相关内容提供主题化的容器。"/>
+    <StackPanel Id="demo">
+      <Card Padding="14"><StackPanel Spacing="6"><TextBlock Text="项目概况" FontWeight="Bold"/><TextBlock Text="可在同一个卡片中分组相关信息。"/></StackPanel></Card>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="为每张卡片保留清晰主题，避免无意义嵌套。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Padding" Text="卡片内边距。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

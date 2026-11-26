@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="项目容器">
+  <StackPanel>
+    <TextBlock Id="summary" Text="重复呈现应用集合或一组普通项目。"/>
+    <StackPanel Id="demo">
+      <ItemsControl Height="105"><TextBlock Text="构建"/><TextBlock Text="校验"/><TextBlock Text="发布"/></ItemsControl>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="使用 ItemsSource 绑定项目，需定制呈现时使用 DataTemplate。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="ItemsSource" Text="项目来源。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

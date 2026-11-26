@@ -1,0 +1,46 @@
+<Window xmlns="urn:sunfleck:v1" Title="Storyboard" Width="360" Height="140">
+  <StackPanel Padding="16" Spacing="8">
+    <Border Id="banner" Width="200" Height="40" Background="#24588C">
+      <Border.Storyboard>
+        <Storyboard>
+          <Timeline Property="Opacity" DurationMs="600" AutoReverse="true">
+            <KeyFrame Position="0" Value="1"/>
+            <KeyFrame Position="1" Value="0.2" Easing="EaseInOut"/>
+          </Timeline>
+          <Timeline Property="RenderTransform" DurationMs="600" AutoReverse="true">
+            <KeyFrame Position="0" Value="1,0,0,1,0,0"/>
+            <KeyFrame Position="1" Value="1,0,0,1,32,0"/>
+          </Timeline>
+        </Storyboard>
+      </Border.Storyboard>
+      <TextBlock Text="Sunfleck" Foreground="#FFFFFF"/>
+    </Border>
+    <Button Id="feedback" Content="Feedback" Height="32" RenderTransformOrigin="0.5,0.5">
+      <Button.VisualStateGroups>
+        <VisualStateGroup Name="CommonStates">
+          <VisualState Name="Normal"/>
+          <VisualState Name="Pressed">
+            <Storyboard>
+              <Timeline Property="Opacity" DurationMs="100" HoldEnd="true">
+                <KeyFrame Position="0" Value="1"/>
+                <KeyFrame Position="1" Value="0.7"/>
+              </Timeline>
+            </Storyboard>
+          </VisualState>
+        </VisualStateGroup>
+      </Button.VisualStateGroups>
+      <Button.Storyboard>
+        <Storyboard>
+          <Timeline Property="Height" DurationMs="250" AutoReverse="true">
+            <KeyFrame Position="0" Value="32"/>
+            <KeyFrame Position="1" Value="46" Easing="EaseOut"/>
+          </Timeline>
+          <Timeline Property="RenderTransform" DurationMs="250" AutoReverse="true">
+            <KeyFrame Position="0" Value="1,0,0,1,0,0"/>
+            <KeyFrame Position="1" Value="0.996195,0.087156,-0.087156,0.996195,0,0"/>
+          </Timeline>
+        </Storyboard>
+      </Button.Storyboard>
+    </Button>
+  </StackPanel>
+</Window>

@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="停靠工具">
+  <StackPanel>
+    <TextBlock Id="summary" Text="承载项目树、属性等辅助面板。"/>
+    <StackPanel Id="demo">
+      <DockHost Height="190"><DockGroup><DockTool Id="dock-project" Title="项目文件" CanClose="false"><TreeView><TreeItem Text="示例项目" Value="1"><TreeItem Text="main.fleck"/></TreeItem></TreeView></DockTool></DockGroup></DockHost>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="用 DockTool 区分辅助窗格与主文档，工作区可按皮肤配置关闭和浮动操作。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Title" Text="工具标签文字。"/>
+      <TextBlock Id="CanClose" Text="是否允许关闭。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

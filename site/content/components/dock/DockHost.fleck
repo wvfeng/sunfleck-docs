@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="停靠工作区">
+  <StackPanel>
+    <TextBlock Id="summary" Text="为可停靠的文档与工具项提供工作区。"/>
+    <StackPanel Id="demo">
+      <DockHost Height="190"><DockGroup><DockDocument Id="dock-document" Title="欢迎"><TextBlock Text="这是工作区中的文档。"/></DockDocument><DockDocument Id="dock-second" Title="说明"><TextBlock Text="点击标签切换内容。"/></DockDocument></DockGroup></DockHost>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="工作区中使用 DockGroup，多个区域通过 DockSplit 组织。应用可保存和载入布局。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Height" Text="工作区可用高度。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

@@ -1,0 +1,11 @@
+<Window xmlns="urn:sunfleck:v1" Title="组件总览">
+  <StackPanel Spacing="14">
+    <TextBlock Text="Sunfleck 组件" FontSize="38" FontWeight="Bold" Foreground="#112F45" Height="Auto"/>
+    <TextBlock Text="按用途浏览内置组件，查看可操作的示例、Fleck 写法与 API。" FontSize="16" Foreground="#536D80" TextWrapping="Wrap"/>
+    <WrapPanel Spacing="10">
+      <Button Id="open-Button" Text="查看 Button 示例" Width="164" Height="40"/>
+      <Button Id="open-quick" Text="创建第一个项目" Width="164" Height="40"/>
+    </WrapPanel>
+    <Slot Name="Categories"/>
+  </StackPanel>
+</Window>

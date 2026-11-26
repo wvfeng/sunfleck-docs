@@ -1,0 +1,32 @@
+<ControlTemplate xmlns="urn:sunfleck:v1" Namespace="urn:sunfleck:documentation"
+                 Class="Documentation.NavigationButton" TargetType="Button">
+  <Border CornerRadius="5" Background="#00000000" BorderThickness="1" BorderBrush="#00000000">
+    <Border.VisualStateGroups>
+      <VisualStateGroup Name="CommonStates">
+        <VisualState Name="Normal"/>
+        <VisualState Name="MouseOver">
+          <Storyboard><Timeline Property="Background" DurationMs="1" HoldEnd="true">
+            <KeyFrame Position="0" Value="#E2EFF4"/>
+            <KeyFrame Position="1" Value="#E2EFF4"/>
+          </Timeline></Storyboard>
+        </VisualState>
+        <VisualState Name="Pressed">
+          <Storyboard><Timeline Property="Background" DurationMs="1" HoldEnd="true">
+            <KeyFrame Position="0" Value="#C9E2EB"/>
+            <KeyFrame Position="1" Value="#C9E2EB"/>
+          </Timeline></Storyboard>
+        </VisualState>
+      </VisualStateGroup>
+      <VisualStateGroup Name="FocusStates">
+        <VisualState Name="Unfocused"/>
+        <VisualState Name="Focused">
+          <Storyboard><Timeline Property="BorderBrush" DurationMs="1" HoldEnd="true">
+            <KeyFrame Position="0" Value="#0D7896"/>
+            <KeyFrame Position="1" Value="#0D7896"/>
+          </Timeline></Storyboard>
+        </VisualState>
+      </VisualStateGroup>
+    </Border.VisualStateGroups>
+    <ContentPresenter/>
+  </Border>
+</ControlTemplate>

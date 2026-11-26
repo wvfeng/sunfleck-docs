@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="等比缩放容器">
+  <StackPanel>
+    <TextBlock Id="summary" Text="根据可用空间等比缩放一个子节点。"/>
+    <StackPanel Id="demo">
+      <Viewbox Width="200" Height="112"><Border Width="100" Height="54" Background="#E5F4FA"><TextBlock Text="等比缩放"/></Border></Viewbox>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="为内容提供合理的自然大小，适合预览、图示和可缩放图形。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Width" Text="可用宽度。"/>
+      <TextBlock Id="Height" Text="可用高度。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

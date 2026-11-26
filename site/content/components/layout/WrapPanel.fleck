@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="换行面板">
+  <StackPanel>
+    <TextBlock Id="summary" Text="当前行空间用尽后自动换行。"/>
+    <StackPanel Id="demo">
+      <WrapPanel Width="240" Spacing="8"><Button Text="第一个" Width="104"/><Button Text="第二个" Width="104"/><Button Text="第三个" Width="104"/></WrapPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="为子项提供可预测的宽度，适合标签、入口集合和工具区。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Spacing" Text="行内和换行后的间距。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

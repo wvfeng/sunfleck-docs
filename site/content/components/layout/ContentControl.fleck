@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="内容控件">
+  <StackPanel>
+    <TextBlock Id="summary" Text="提供单个内容和可替换的模板外观。"/>
+    <StackPanel Id="demo">
+      <ContentControl><Border Background="#E5F4FA" Padding="14"><TextBlock Text="作为视觉子节点的内容"/></Border></ContentControl>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="需要呈现视觉内容时提供单个子节点。模板用 ContentPresenter 放置内容。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Content" Text="可声明的文字内容。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

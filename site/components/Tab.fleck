@@ -1,0 +1,5 @@
+<Border xmlns="urn:sunfleck:v1" Id="tab-frame-KEY" Width="78" Height="36" Background="#EAF0F4" CornerRadius="5">
+  <Button Id="tab-KEY" Template="docs:NavigationButton" Content="LABEL">
+    <TextBlock Text="LABEL" Foreground="#164C65" TextAlignment="Center" VerticalAlignment="Center"/>
+  </Button>
+</Border>

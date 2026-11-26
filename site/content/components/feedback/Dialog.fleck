@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="对话框">
+  <StackPanel>
+    <TextBlock Id="summary" Text="集中展示需要用户处理的内容。"/>
+    <StackPanel Id="demo">
+      <StackPanel Spacing="8"><Button Id="demo-open" Text="打开对话框" Width="146"/><Dialog Id="demo-popup"><StackPanel Spacing="8"><TextBlock Text="确认当前操作？"/><Button Id="demo-close" Text="关闭"/></StackPanel></Dialog></StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="打开和关闭动作由应用连接，Escape 可关闭当前示例。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="控制对话框开关。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

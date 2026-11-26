@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="单选框">
+  <StackPanel>
+    <TextBlock Id="summary" Text="从同一组互斥选项中选择一项。"/>
+    <StackPanel Id="demo">
+      <StackPanel Spacing="8"><RadioButton Text="标准模式" Value="1"/><RadioButton Text="紧凑模式"/></StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="把同组单选框放在同一父容器内。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="0 未选中，1 选中。"/>
+      <TextBlock Id="Text" Text="选项名称。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="悬浮提示">
+  <StackPanel>
+    <TextBlock Id="summary" Text="悬停在锚点上时显示补充信息。"/>
+    <StackPanel Id="demo">
+      <StackPanel Spacing="8"><Button Id="tip-anchor" Text="悬停查看提示" Width="146"/><Tooltip Anchor="tip-anchor"><TextBlock Text="这里说明此操作的作用。"/></Tooltip></StackPanel>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="简要解释图标或操作，重要文字直接放在页面中。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Anchor" Text="要监听悬停的节点 Id。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

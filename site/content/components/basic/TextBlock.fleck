@@ -1,0 +1,16 @@
+<Window xmlns="urn:sunfleck:v1" Title="文本">
+  <StackPanel>
+    <TextBlock Id="summary" Text="呈现可换行的静态文本及行内富文本。"/>
+    <StackPanel Id="demo">
+      <TextBlock Text="Sunfleck 文本可以换行、调整字号并使用行内样式。" FontSize="20" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="多行说明启用 Wrap，短标签可根据容器宽度选择裁剪方式。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Text" Text="要显示的文字。"/>
+      <TextBlock Id="TextWrapping" Text="控制可用宽度内的换行。"/>
+      <TextBlock Id="FontSize" Text="逻辑像素字号。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

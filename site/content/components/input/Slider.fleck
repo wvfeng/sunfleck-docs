@@ -1,0 +1,14 @@
+<Window xmlns="urn:sunfleck:v1" Title="滑块">
+  <StackPanel>
+    <TextBlock Id="summary" Text="用拖动或键盘操作调整连续值。"/>
+    <StackPanel Id="demo">
+      <Slider Width="240" Value="45"/>
+    </StackPanel>
+    <StackPanel Id="guide" Spacing="10">
+      <TextBlock Text="当前取值范围为 0–100，业务范围可在读写模型时转换。" TextWrapping="Wrap"/>
+    </StackPanel>
+    <StackPanel Id="api">
+      <TextBlock Id="Value" Text="0 到 100 的数值。"/>
+    </StackPanel>
+  </StackPanel>
+</Window>

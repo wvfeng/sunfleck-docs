@@ -1,0 +1,15 @@
+<Window xmlns="urn:sunfleck:v1" Title="Dock 工作区" Width="720" Height="350">
+  <DockHost>
+    <DockSplit Orientation="Horizontal" Ratio="30">
+      <DockGroup>
+        <DockTool Id="files" Title="项目文件" CanClose="false">
+          <TreeView><TreeItem Text="应用" Value="1"><TreeItem Text="main.fleck"/><TreeItem Text="main.cpp"/></TreeItem></TreeView>
+        </DockTool>
+      </DockGroup>
+      <DockGroup>
+        <DockDocument Id="editor" Title="编辑器"><TextArea Text="在这里编辑文本，拖动标签调整布局。"/></DockDocument>
+        <DockDocument Id="help" Title="帮助"><TextBlock Text="第二个文档页"/></DockDocument>
+      </DockGroup>
+    </DockSplit>
+  </DockHost>
+</Window>
