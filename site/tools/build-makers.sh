@@ -40,8 +40,10 @@ fi
 if [[ ! -x "$ninja_tools/ninja" ]]; then
     curl -fsSL --retry 3 "https://github.com/ninja-build/ninja/releases/download/v$ninja_version/ninja-linux.zip" \
         -o "$work/ninja.zip"
-    python3 -m zipfile -e "$work/ninja.zip" "$ninja_tools"
-    chmod +x "$ninja_tools/ninja"
+    mkdir -p "$ninja_tools"
+    # Preserve the executable mode stored in the official ZIP.
+    "$cmake_tools/bin/cmake" -E chdir "$ninja_tools" "$cmake_tools/bin/cmake" -E tar xf "$work/ninja.zip" ninja
+    "$ninja_tools/ninja" --version
 fi
 export PATH="$cmake_tools/bin:$ninja_tools:$PATH"
 
