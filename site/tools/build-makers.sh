@@ -8,7 +8,7 @@ if [[ "$(uname -s):$(uname -m)" != 'Linux:x86_64' ]]; then
     exit 1
 fi
 
-for tool in curl git python3 tar; do
+for tool in curl node python3 tar; do
     if ! command -v "$tool" >/dev/null; then
         echo "Missing build tool: $tool" >&2
         exit 1
@@ -16,12 +16,13 @@ for tool in curl git python3 tar; do
 done
 
 sdk_version=v1.0.0
-emsdk_version=3.1.56
+emscripten_version=3.1.56
+emscripten_revision=9d106be887796484c4aaffc9dc45f48a8810f336
 cmake_version=3.31.8
 ninja_version=1.13.1
 work="$PWD/out/makers"
 release="https://github.com/wvfeng/sunfleck-core/releases/download/$sdk_version"
-emsdk="$work/emsdk-$emsdk_version"
+toolchain="$work/emscripten-$emscripten_version"
 cmake_tools="$work/cmake-$cmake_version-linux-x86_64"
 ninja_tools="$work/ninja-$ninja_version"
 fonts="$work/fonts"
@@ -59,15 +60,31 @@ if [[ ! -f "$core/tools/fleckc.cpp" ]]; then
     tar -xzf "$work/core.tar.gz" -C "$work"
 fi
 
-if [[ ! -f "$emsdk/emsdk" ]]; then
-    git clone --depth 1 --branch "$emsdk_version" https://github.com/emscripten-core/emsdk.git "$emsdk"
+if [[ ! -x "$toolchain/emscripten/emcc" ]]; then
+    archive="$work/emscripten-$emscripten_version.tar.xz"
+    curl -fsSL --retry 3 \
+        "https://storage.googleapis.com/webassembly/emscripten-releases-builds/linux/$emscripten_revision/wasm-binaries.tar.xz" \
+        -o "$archive"
+    unpack=$(mktemp -d "$work/emscripten.XXXXXXXX")
+    # CMake reads xz archives without calling a system xz executable.
+    cmake -E chdir "$unpack" cmake -E tar xf "$archive"
+    cmake -E rename "$unpack/install" "$toolchain"
+    cmake -E rm -f "$archive"
 fi
-"$emsdk/emsdk" install "$emsdk_version"
-"$emsdk/emsdk" activate "$emsdk_version"
-set +u
-source "$emsdk/emsdk_env.sh"
-set -u
+
+export PATH="$toolchain/emscripten:$PATH"
+export EM_CONFIG="$toolchain/.emscripten"
 export EM_CACHE="$work/emscripten-cache"
+cat > "$EM_CONFIG" <<'PY'
+import os
+import shutil
+
+toolchain = os.path.dirname(os.environ["EM_CONFIG"])
+LLVM_ROOT = os.path.join(toolchain, "bin")
+BINARYEN_ROOT = toolchain
+NODE_JS = shutil.which("node")
+PY
+emcc --version
 
 cjk_font="$fonts/NotoSansCJKsc-Regular.otf"
 mono_font="$fonts/NotoSansMono.ttf"
@@ -84,7 +101,7 @@ emcmake cmake -S . -B "$work/site" -G Ninja -DCMAKE_BUILD_TYPE=Release \
     "-DSUNFLECK_DOC_FONT=$cjk_font" "-DSUNFLECK_DOC_MONO=$mono_font"
 cmake --build "$work/site" --target documentation --parallel "$jobs"
 
-cp "$emsdk/upstream/emscripten/LICENSE" "$site/licenses/Emscripten.txt"
+cp "$toolchain/emscripten/LICENSE" "$site/licenses/Emscripten.txt"
 freetype_license=$(find "$EM_CACHE/ports/freetype" -type f -name FTL.TXT -print -quit)
 if [[ -z "$freetype_license" ]]; then
     echo 'FreeType license is missing from the Emscripten port cache.' >&2
@@ -92,6 +109,6 @@ if [[ -z "$freetype_license" ]]; then
 fi
 cp "$freetype_license" "$site/licenses/FreeType.txt"
 for library in libcxx libcxxabi libunwind compiler-rt; do
-    cp "$emsdk/upstream/emscripten/system/lib/$library/LICENSE.TXT" "$site/licenses/$library.txt"
+    cp "$toolchain/emscripten/system/lib/$library/LICENSE.TXT" "$site/licenses/$library.txt"
 done
 python3 tools/package.py "$site" "$work/sunfleck-docs.zip" "$EM_CACHE/ports"

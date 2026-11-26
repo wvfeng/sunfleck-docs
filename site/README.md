@@ -25,7 +25,7 @@ $env:PATH = "$sdk/bin;$(Split-Path $python);$env:PATH"
 
 关联 `sunfleck-docs` 仓库后，将 Makers 的根目录设为 `site`，框架预设选「其他」或「自定义」。[edgeone.json](edgeone.json) 指定安装命令 `true`、编译命令 `npm run build` 和输出目录 `out/makers/site/web`。如果控制台要求填写这些字段，使用相同的值。
 
-构建命令在 Linux x86_64 上运行，需要 Bash、Git、curl、tar 和 Python 3.9+。它下载 Core `v1.0.0` 的 Wasm SDK，并安装指定版本的 CMake、Ninja、Emscripten 和字体。构建时，文档站和 Node.js 版 `fleckc` 都链接 SDK 中已编译的 Core 库。`fleckc` 只编译同一标签下的工具入口 `tools/fleckc.cpp`，然后校验各个文档页面。站点输出包含 HTML、JavaScript、Wasm、字体数据和许可证。[Core v1.0.0 Release](https://github.com/wvfeng/sunfleck-core/releases/tag/v1.0.0)
+构建命令在 Linux x86_64 上运行，需要 Bash、curl、tar、Node.js 和 Python 3.9+。它下载 Core `v1.0.0` 的 Wasm SDK，并安装指定版本的 CMake、Ninja、Emscripten 和字体。Emscripten 由 CMake 解包，使用 Makers 提供的 Node.js。构建时，文档站和 Node.js 版 `fleckc` 都链接 SDK 中已编译的 Core 库。`fleckc` 只编译同一标签下的工具入口 `tools/fleckc.cpp`，然后校验各个文档页面。站点输出包含 HTML、JavaScript、Wasm、字体数据和许可证。[Core v1.0.0 Release](https://github.com/wvfeng/sunfleck-core/releases/tag/v1.0.0)
 
 ## 内容维护
 
